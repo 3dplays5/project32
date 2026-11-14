@@ -1,5 +1,6 @@
-res://player.tscn
 res://testlevel.tscn
 res://player.gd
 res://shotgun.tscn
 res://shotgun.gd
+res://enemyslime.tscn
+res://enemyslime.gd

@@ -47,6 +47,5 @@ func _physics_process(delta: float) -> void:
 		knockback = knockback.limit_length(1000)
 		velocity = knockback
 		shoot.emit()
-		print(knockback)
 	
 	move_and_slide()

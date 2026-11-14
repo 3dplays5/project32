@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnshkn0piniwy" path="res://textures/Untitled266_20261114100858.png" id="1_w3snd"]
 [ext_resource type="PackedScene" uid="uid://db6qke20ppoh3" path="res://player.tscn" id="2_pi5jr"]
+[ext_resource type="PackedScene" uid="uid://bh6elndgine2p" path="res://enemyslime.tscn" id="3_74kyy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi5jr"]
 texture = ExtResource("1_w3snd")
@@ -23,3 +24,6 @@ tile_set = SubResource("TileSet_dkoqu")
 
 [node name="player" parent="." unique_id=1540481534 instance=ExtResource("2_pi5jr")]
 position = Vector2(127, 941.00006)
+
+[node name="enemyslime" parent="." unique_id=1457185494 instance=ExtResource("3_74kyy")]
+position = Vector2(869, 936)
