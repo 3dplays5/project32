@@ -1,17 +1,24 @@
 [gd_scene format=3 uid="uid://cjxlyi4k7htr7"]
 
 [ext_resource type="Script" uid="uid://c60k68fntsuu" path="res://shotgun.gd" id="1_5bb75"]
-[ext_resource type="Texture2D" uid="uid://dnshkn0piniwy" path="res://Untitled266_20261114100858.png" id="1_hn68x"]
+[ext_resource type="Texture2D" uid="uid://bgb0c0ej4gjkj" path="res://textures/gun.png" id="2_5bb75"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5bb75"]
-atlas = ExtResource("1_hn68x")
-region = Rect2(548, 0, 137, 135)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oeqp"]
+atlas = ExtResource("2_5bb75")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8mn3"]
+atlas = ExtResource("2_5bb75")
+region = Rect2(1080, 0, 1080, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkoqu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5bb75")
+"texture": SubResource("AtlasTexture_7oeqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8mn3")
 }],
 "loop": 1,
 "name": &"default",
@@ -23,7 +30,8 @@ scale = Vector2(0.53899604, 0.53899604)
 script = ExtResource("1_5bb75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=4157193]
-position = Vector2(179, 0)
+position = Vector2(280.1505, 0)
+scale = Vector2(0.38446847, 0.38446847)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1421944331]

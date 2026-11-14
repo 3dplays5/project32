@@ -1,18 +1,25 @@
 [gd_scene format=3 uid="uid://db6qke20ppoh3"]
 
-[ext_resource type="Texture2D" uid="uid://dnshkn0piniwy" path="res://Untitled266_20261114100858.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bihvbqbo5orgy" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cklmnq8aj46m1" path="res://textures/playeridle1.png" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://cjxlyi4k7htr7" path="res://shotgun.tscn" id="3_i3pqv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(274, 0, 137, 135)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(1080, 0, 1080, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkoqu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_onrkg")
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
 }],
 "loop": 1,
 "name": &"default",
@@ -20,16 +27,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueold"]
-size = Vector2(124, 135.16974)
+size = Vector2(132.57031, 101.377304)
 
 [node name="player" type="CharacterBody2D" unique_id=1540481534]
-scale = Vector2(0.3847015, 0.3847015)
+scale = Vector2(0.767845, 0.72540814)
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886926606]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.29709113, 0.29709113)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
+autoplay = "default"
+frame_progress = 0.6225674
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=739992034]
+position = Vector2(3.8991263, -14.2968)
 shape = SubResource("RectangleShape2D_ueold")
 
 [node name="SHOTGUN" parent="." unique_id=1213822578 instance=ExtResource("3_i3pqv")]
