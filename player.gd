@@ -30,5 +30,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func shoot()
-	shotgun.global_transform.basis.z
+func shoot():
+	pass
+	#shotgun.global_transform.basis.z
