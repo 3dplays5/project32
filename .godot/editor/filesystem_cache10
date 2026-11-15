@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1794782348
+::res://::1794782527
 door.gd::GDScript::8456194210272169325::1794781667::0::1::::<>Area2D<><>0<>0<><>::
 door.tscn::PackedScene::671997367494725246::1794781667::0::1::::<><><>0<>0<><>::uid://dsqijvmau8sob::::res://door.gd<>uid://r3vefhar41ka::::res://textures/goor.png
 enemydeath.gd::GDScript::2050431793584348476::1794770117::0::1::::<>CPUParticles2D<><>0<>0<><>::
@@ -7,7 +7,7 @@ enemydeath.tscn::PackedScene::8822278345713336514::1794770636::0::1::::<><><>0<>
 enemyslime.gd::GDScript::2501009188820382199::1794780798::0::1::::<>CharacterBody2D<><>0<>0<><>::
 enemyslime.tscn::PackedScene::2942001498960985373::1794779956::0::1::::<><><>0<>0<><>::uid://bbvrix4m8aqkt::::res://enemyslime.gd<>uid://dob71krmt05t5::::res://textures/EVILslime.png
 gameover.gd::GDScript::3397479756463496331::1794778845::0::1::::<>Node2D<><>0<>0<><>::
-gameover.tscn::PackedScene::1165502326114726073::1794779176::0::1::::<><><>0<>0<><>::uid://bon083p1hpftj::::res://gameover.gd
+gameover.tscn::PackedScene::1165502326114726073::1794782420::0::1::::<><><>0<>0<><>::uid://bon083p1hpftj::::res://gameover.gd<>uid://c555d871ihvtr::::res://level1(1).png
 global.gd::GDScript::323348527359173330::1794779414::0::1::::<>Node<><>0<>0<><>::
 gunshoot.tscn::PackedScene::2417847753030169894::1794770913::0::1::::<><><>0<>0<><>::uid://4hiku0smu7gq::::res://enemydeath.gd
 level1(1).png::CompressedTexture2D::6942266660210283363::1794782348::1794782349::1::::<><><>0<>0<>976c7eca48d9baba2e5d0cade2e9717e<>res://.godot/imported/level1(1).png-d0273023b27888a4f5adde229b1badeb.ctex::
@@ -21,6 +21,7 @@ level_2.gd::GDScript::6285573372328771284::1794781579::0::1::::<>Node2D<><>0<>0<
 level_1.gd::GDScript::6691730440901764052::1794781598::0::1::::<>Node2D<><>0<>0<><>::
 shotgun.gd::GDScript::205910859857846348::1794770836::0::1::::<>Area2D<><>0<>0<><>::
 shotgun.tscn::PackedScene::5452732859929560934::1794771202::0::1::::<><><>0<>0<><>::uid://c60k68fntsuu::::res://shotgun.gd<>uid://bgb0c0ej4gjkj::::res://textures/gun.png
+start screen.png::CompressedTexture2D::2343573663059905581::1794782527::1794782528::1::::<><><>0<>0<>dc5d42c2e40ae6f69396303db5d32b95<>res://.godot/imported/start screen.png-23d14958db809f783c6fb976fe6a4da6.ctex::
 testlevel.tscn::PackedScene::3319574857101057973::1794772386::0::1::::<><><>0<>0<><>::uid://nmvctyu8uoh0::::res://textures/tile.png<>uid://bqfire1q4bonq::::res://textures/icon.svg<>uid://db6qke20ppoh3::::res://player.tscn<>uid://bh6elndgine2p::::res://enemyslime.tscn<>uid://b4l37udsahc7h::::res://ui.tscn<>uid://bo3cawlikn3bv::::res://textures/backgroumd.png
 ui.gd::GDScript::3079512572965161515::1794780151::0::1::::<>Node2D<><>0<>0<><>::
 ui.tscn::PackedScene::4446363581612647687::1794780151::0::1::::<><><>0<>0<><>::uid://bj40efhfhixfv::::res://ui.gd<>uid://cfabjqdnp1bxy::::res://textures/uiheart.png<>uid://bys5x21jlv5ys::::res://textures/bulletui.png

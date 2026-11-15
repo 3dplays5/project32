@@ -163,7 +163,7 @@ position = Vector2(1923, 1399)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.76710206
+frame_progress = 0.5571029
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world" unique_id=486659268]
 position = Vector2(2, 716)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://by7n82p356yp0"]
+
+[ext_resource type="Script" uid="uid://vxg02h44nynb" path="res://startscreen.gd" id="1_nrfbx"]
+[ext_resource type="Texture2D" uid="uid://8nik0dnjavon" path="res://start screen.png" id="2_e4hpb"]
+
+[node name="startscreen" type="Node2D" unique_id=572030079]
+script = ExtResource("1_nrfbx")
+
+[node name="StartScreen" type="Sprite2D" parent="." unique_id=910009823]
+position = Vector2(1082, 358)
+texture = ExtResource("2_e4hpb")
+
+[node name="Button" type="Button" parent="." unique_id=1797045057]
+offset_left = 64.0
+offset_top = 488.0
+offset_right = 313.0
+offset_bottom = 607.0
+theme_override_constants/outline_size = 23
+theme_override_constants/icon_max_width = 17
+theme_override_font_sizes/font_size = 81
+text = "START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

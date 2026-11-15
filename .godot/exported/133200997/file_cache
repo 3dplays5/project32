@@ -1,0 +1,14 @@
+res://door.tscn::dcadc8e8c8f6776d00961e76dea4add6::1794781667::res://.godot/exported/133200997/export-8983deb26aa580c1e8cfdf2626a973f8-door.scn
+res://enemydeath.tscn::11e1a1a227b8539563ca0cb11a5ccd93::1794770636::res://.godot/exported/133200997/export-f735af42216ff404c22a4a3af7fd76b1-enemydeath.scn
+res://enemyslime.tscn::00335d983cb6ba4a485c9eaf0939a66a::1794779956::res://.godot/exported/133200997/export-9a6f59c2d872de2c01eec4ae19359b42-enemyslime.scn
+res://gameover.tscn::24d46a93da1939a81f0348e753634548::1794782420::res://.godot/exported/133200997/export-11f7ccd5fee5c70f5922d0bf4f5eeebb-gameover.scn
+res://gunshoot.tscn::c973aa565eb36a787b0d58c1e4ed6d4e::1794770913::res://.godot/exported/133200997/export-e79d2b3e41ade7a9e2517c5e8d013865-gunshoot.scn
+res://level_1.tscn::48517d798b6eb7080a6b9cb677b8830b::1794782878::res://.godot/exported/133200997/export-63309efd344a9c730c2375c6c1edaf63-level_1.scn
+res://player.tscn::2162b9d3a6f731fc49ef5d1b93e9fdf5::1794780309::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://p_bullet.tscn::113a0af95d5d8383675ad6dc8be1ec5f::1794777909::res://.godot/exported/133200997/export-3eb8ba1075af0203bc0304d1c651289e-p_bullet.scn
+res://level_2.tscn::e7257d23b16c7660b0f763f8080c35d3::1794781579::res://.godot/exported/133200997/export-f232880c53f78a005d817f1d8d602f60-level_2.scn
+res://startscreen.tscn::367edbf2da310a57a871921b7fc97b74::1794782631::res://.godot/exported/133200997/export-bdab23c584a47c543e0804cbf0c2c367-startscreen.scn
+res://shotgun.tscn::e23eedc5e0b1cf08ec14db0e911a53ce::1794771202::res://.godot/exported/133200997/export-9b1cf89ee4216d639091511a94af1f6d-shotgun.scn
+res://testlevel.tscn::921a7633ce7668eadae0dda8294abcf5::1794772386::res://.godot/exported/133200997/export-107002e130077216f0851ac64de16150-testlevel.scn
+res://ui.tscn::7119090c53e313991987821e471d641a::1794780151::res://.godot/exported/133200997/export-5d2f649bfda0e984c5f95c948cc9f360-ui.scn
+res://winscreen.tscn::d30b402dcea5f37e8fbe1d57af5a68c3::1794780051::res://.godot/exported/133200997/export-c038d8435ba93d78596e22e34a991b07-winscreen.scn
