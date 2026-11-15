@@ -4,7 +4,9 @@ extends CharacterBody2D
 var SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var can_flip = true
-
+@onready var sprite = $AnimatedSprite2D
+@onready var aim = $Area2D
+@onready var player = $"../player"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -13,6 +15,8 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = SPEED
 	
+	aim.look_at(player.position)
+	
 	if is_on_wall() && can_flip:
 		if can_flip:
 			SPEED *= -1
@@ -20,4 +24,13 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.1).timeout
 		can_flip = true
 
+	if SPEED > 0:
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
+
 	move_and_slide()
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bullet"):
+		queue_free()

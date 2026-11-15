@@ -1,33 +1,53 @@
 [gd_scene format=3 uid="uid://db6qke20ppoh3"]
 
 [ext_resource type="Script" uid="uid://bihvbqbo5orgy" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://cklmnq8aj46m1" path="res://textures/playeridle1.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bota4oc2wr12i" path="res://textures/slime.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://d1ews7ol3vb08" path="res://textures/slimemove.png" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://cjxlyi4k7htr7" path="res://shotgun.tscn" id="3_i3pqv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
-atlas = ExtResource("2_i3pqv")
-region = Rect2(0, 0, 1080, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("2_i3pqv")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("3_hqtel")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("3_hqtel")
 region = Rect2(1080, 0, 1080, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkoqu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i3pqv")
+"texture": SubResource("AtlasTexture_hqtel")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hqtel")
+"texture": SubResource("AtlasTexture_sweqy")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueold"]
-size = Vector2(132.57031, 101.377304)
+size = Vector2(100.280655, 66.16965)
 
 [node name="player" type="CharacterBody2D" unique_id=1540481534]
 scale = Vector2(0.767845, 0.72540814)
@@ -35,13 +55,15 @@ script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886926606]
 position = Vector2(0, -3.8146973e-06)
-scale = Vector2(0.29709113, 0.29709113)
+scale = Vector2(0.20966756, 0.20966756)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
+animation = &"run"
 autoplay = "default"
-frame_progress = 0.6225674
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=739992034]
-position = Vector2(3.8991263, -14.2968)
+position = Vector2(4.5582094, -8.271206)
 shape = SubResource("RectangleShape2D_ueold")
 
 [node name="SHOTGUN" parent="." unique_id=1213822578 instance=ExtResource("3_i3pqv")]
+
+[connection signal="shoot" from="." to="SHOTGUN" method="_on_player_shoot"]

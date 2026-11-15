@@ -25,12 +25,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dkoqu"]
+radius = 77.21872
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x446p"]
 radius = 47.0
-height = 148.0
+height = 126.96269
 
 [node name="enemyslime" type="CharacterBody2D" unique_id=1457185494]
-scale = Vector2(0.610861, 0.610861)
+scale = Vector2(0.4058577, 0.4058577)
 script = ExtResource("1_ac1ox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=256262510]
@@ -38,7 +41,21 @@ position = Vector2(-5, 4)
 scale = Vector2(0.32939816, 0.32939816)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
 
+[node name="Area2D2" type="Area2D" parent="." unique_id=67014348]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=45871523]
+shape = SubResource("CircleShape2D_dkoqu")
+debug_color = Color(0.81009567, 0, 0.29873285, 0.41960785)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201773297]
 position = Vector2(2, -4)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_x446p")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=628121168]
+
+[node name="Marker2D" type="Marker2D" parent="Area2D" unique_id=2047396771]
+position = Vector2(117.866425, 0)
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

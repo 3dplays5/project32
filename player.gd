@@ -18,16 +18,19 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if Input.is_action_pressed("left") && is_on_floor():
+		sprite.play("run")
 		if is_on_floor():
 			velocity.x = -SPEED
 			direction = "left"
 			sprite.flip_h = true
 	elif Input.is_action_pressed("right") && is_on_floor():
+		sprite.play("run")
 		if is_on_floor():
 			velocity.x = SPEED
 			direction = "right"
 			sprite.flip_h = false
 	else:
+		sprite.play("default")
 		if is_on_floor():
 			velocity.x = 0
 			
@@ -41,11 +44,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") && is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
+	if is_on_floor():
+		if bullets != 3:
+			bullets = 3
+	
 	if Input.is_action_just_pressed("shoot"):
-		var shoot_dir = get_local_mouse_position()
-		var knockback = shoot_dir * -80
-		knockback = knockback.limit_length(1000)
-		velocity = knockback
-		shoot.emit()
+		#if bullets >= 3:
+			var shoot_dir = get_local_mouse_position()
+			var knockback = shoot_dir * -100
+			knockback = knockback.limit_length(1000)
+			velocity = knockback
+			bullets -= 1
+			shoot.emit()
 	
 	move_and_slide()

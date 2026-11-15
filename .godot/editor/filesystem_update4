@@ -4,3 +4,7 @@ res://shotgun.tscn
 res://shotgun.gd
 res://enemyslime.tscn
 res://enemyslime.gd
+res://player.tscn
+res://p_bullet.tscn
+res://p_bullet.gd
+res://ui.tscn
