@@ -5,10 +5,10 @@ var SPEED = 600.0
 var direction = ""
 const JUMP_VELOCITY = -800
 var gravity = 50
-var bullets = 3
 @onready var shotgun = $SHOTGUN
 @onready var sprite = $AnimatedSprite2D
 var directionback = Vector2.ZERO
+var can_dmg = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -45,16 +45,37 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	if is_on_floor():
-		if bullets != 3:
-			bullets = 3
+		if Global.bullets != 3:
+			Global.bullets = 3
+	if Input.is_action_pressed("reload scene"):
+		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("shoot"):
-		#if bullets >= 3:
+		if Global.bullets > 0:
 			var shoot_dir = get_local_mouse_position()
 			var knockback = shoot_dir * -100
 			knockback = knockback.limit_length(1000)
 			velocity = knockback
-			bullets -= 1
+			Global.bullets -= 1
 			shoot.emit()
 	
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		if can_dmg:
+			Global.player_health -= 1
+			var shoot_dir = body.global_position
+			var knockback = shoot_dir * -100
+			knockback = knockback.limit_length(1000)
+			velocity = knockback
+			can_dmg = false 
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(0.1).timeout
+	can_dmg = true
+	if Global.player_health <= 0:
+		get_tree().change_scene_to_file("res://gameover.tscn")
+		

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://qutwg5wjr4or"]
+
+[ext_resource type="Script" uid="uid://bon083p1hpftj" path="res://gameover.gd" id="1_4nh4k"]
+
+[node name="gameover" type="Node2D" unique_id=73598321]
+script = ExtResource("1_4nh4k")
+
+[node name="Label" type="Label" parent="." unique_id=1629480057]
+offset_left = 402.0
+offset_top = 291.0
+offset_right = 718.0
+offset_bottom = 367.0
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 55
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="." unique_id=617196044]
+offset_left = 499.0
+offset_top = 416.0
+offset_right = 641.0
+offset_bottom = 469.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 32
+text = "RESTART"
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

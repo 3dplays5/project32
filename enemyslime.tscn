@@ -32,8 +32,10 @@ radius = 77.21872
 radius = 47.0
 height = 126.96269
 
-[node name="enemyslime" type="CharacterBody2D" unique_id=1457185494]
+[node name="enemyslime" type="CharacterBody2D" unique_id=1457185494 groups=["enemy"]]
 scale = Vector2(0.4058577, 0.4058577)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ac1ox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=256262510]

@@ -8,3 +8,7 @@ res://player.tscn
 res://p_bullet.tscn
 res://p_bullet.gd
 res://ui.tscn
+res://ui.gd
+res://global.gd
+res://gameover.gd
+res://gameover.tscn
