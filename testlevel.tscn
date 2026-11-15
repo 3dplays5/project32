@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://db6qke20ppoh3" path="res://player.tscn" id="2_pi5jr"]
 [ext_resource type="PackedScene" uid="uid://bh6elndgine2p" path="res://enemyslime.tscn" id="3_74kyy"]
 [ext_resource type="PackedScene" uid="uid://b4l37udsahc7h" path="res://ui.tscn" id="3_kx2s4"]
+[ext_resource type="Texture2D" uid="uid://bo3cawlikn3bv" path="res://textures/backgroumd.png" id="6_8ws1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx2s4"]
 texture = ExtResource("1_74kyy")
@@ -31,6 +32,24 @@ physics_layer_1/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_kx2s4")
 sources/1 = SubResource("TileSetAtlasSource_8ws1j")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8edd"]
+load_path = "res://.godot/imported/backgroumd.png-7e9c88008f7d148336432a7fa603a5f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbk63"]
+atlas = SubResource("CompressedTexture2D_k8edd")
+region = Rect2(3838.479, 5.375, 3840.498, 2159.2769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkoqu"]
+atlas = ExtResource("6_8ws1j")
+region = Rect2(11519.502, 0, 3840.498, 2159.2769)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pr5en"]
+load_path = "res://.godot/imported/backgroumd.png-7e9c88008f7d148336432a7fa603a5f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78fwt"]
+atlas = SubResource("CompressedTexture2D_pr5en")
+region = Rect2(7681.6377, -9.278564, 3840.498, 2159.2769)
+
 [node name="testlevel" type="Node2D" unique_id=2114038731]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1243007248]
@@ -47,6 +66,34 @@ scale = Vector2(1.3023462, 1.3785343)
 zoom = Vector2(0.77, 0.77)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="player/Camera2D" unique_id=894391242]
+scale = Vector2(0.365, 0.365)
+transform = Transform2D(0.365, 0, 0, 0.365, 0, 0)
+
+[node name="Parallax2D3" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=1095505216]
+scale = Vector2(1.4799197, 1.5141654)
+scroll_scale = Vector2(1.1, 1.1)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D2" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D3" unique_id=858920508]
+texture = SubResource("AtlasTexture_jbk63")
+
+[node name="Parallax2D" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=1778177405]
+scale = Vector2(1.4799197, 1.5141654)
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D4" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D" unique_id=1379419571]
+texture = SubResource("AtlasTexture_dkoqu")
+
+[node name="Parallax2D2" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=1098495867]
+scale = Vector2(1.4799197, 1.5141654)
+scroll_scale = Vector2(1.3, 1.3)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D3" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D2" unique_id=1399536466]
+texture = SubResource("AtlasTexture_78fwt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D" unique_id=1232651674]
 

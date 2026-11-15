@@ -7,11 +7,12 @@ const JUMP_VELOCITY = -800
 var gravity = 50
 @onready var shotgun = $SHOTGUN
 @onready var sprite = $AnimatedSprite2D
-var directionback = Vector2.ZERO
 var can_dmg = true
+var particle = preload("res://enemydeath.tscn")
 
 func _ready() -> void:
 	Global.player_health = 4
+	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -74,6 +75,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			knockback = knockback.limit_length(1000)
 			velocity = knockback
 			can_dmg = false 
+	if body.is_in_group("lava"):
+		velocity.y = -2000
+		Global.player_health -= 2
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -81,5 +85,21 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		await get_tree().create_timer(0.1).timeout
 		can_dmg = true
 		if Global.player_health <= 0:
+			sprite.hide()
+			var spawn = particle.instantiate()
+			owner.add_child(spawn)
+			spawn.transform = self.transform
+			await get_tree().create_timer(0.3).timeout
 			get_tree().change_scene_to_file("res://gameover.tscn")
+	if body.is_in_group("lava"):
+		await get_tree().create_timer(0.1).timeout
+		can_dmg = true
+		if Global.player_health <= 0:
+			sprite.hide()
+			var spawn = particle.instantiate()
+			owner.add_child(spawn)
+			spawn.transform = self.transform
+			await get_tree().create_timer(0.3).timeout
+			get_tree().change_scene_to_file("res://gameover.tscn")
+		
 		

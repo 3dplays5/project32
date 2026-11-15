@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxb13uffj4kc3"]
+
+[node name="winscreen" type="Node2D" unique_id=2040464906]
+
+[node name="Label" type="Label" parent="." unique_id=1952877274]
+offset_left = 439.0
+offset_top = 272.0
+offset_right = 603.0
+offset_bottom = 323.0
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 37
+text = "YOU WIN"

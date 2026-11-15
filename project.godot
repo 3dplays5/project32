@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project32"
-run/main_scene="uid://bnka6bkv2g2cf"
+run/main_scene="uid://u16a8hl72hf1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://textures/icon.svg"
 
@@ -24,14 +24,16 @@ Global="*uid://euvrdqccxaus"
 window/size/viewport_width=1080
 window/size/viewport_height=720
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
 window/stretch/scale_mode="integer"
 
 [global_group]
 
 bullet=""
 enemy=""
+lava=""
+player=""
 
 [input]
 

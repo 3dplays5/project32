@@ -1,0 +1,323 @@
+[gd_scene format=4 uid="uid://cw8egtti8vyrv"]
+
+[ext_resource type="PackedScene" uid="uid://jtrx0omydvxe" path="res://door.tscn" id="1_7dov7"]
+[ext_resource type="Script" uid="uid://cvs1qfhwt138c" path="res://level_2.gd" id="1_ehv2h"]
+[ext_resource type="Texture2D" uid="uid://dk81hluwms3uh" path="res://textures/level2.png" id="2_7dov7"]
+[ext_resource type="Texture2D" uid="uid://chno6r8osjroy" path="res://textures/particles.png" id="3_15wb7"]
+[ext_resource type="Texture2D" uid="uid://bota4oc2wr12i" path="res://textures/slime.png" id="4_eoq84"]
+[ext_resource type="PackedScene" uid="uid://bh6elndgine2p" path="res://enemyslime.tscn" id="5_yl73a"]
+[ext_resource type="PackedScene" uid="uid://db6qke20ppoh3" path="res://player.tscn" id="6_xbcdb"]
+[ext_resource type="Texture2D" uid="uid://bo3cawlikn3bv" path="res://textures/backgroumd.png" id="7_s77qv"]
+[ext_resource type="PackedScene" uid="uid://b4l37udsahc7h" path="res://ui.tscn" id="8_5hnhx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dkoqu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5hph3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehv2h"]
+atlas = ExtResource("2_7dov7")
+region = Rect2(0, 0, 3840, 2160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15wb7"]
+atlas = ExtResource("2_7dov7")
+region = Rect2(3840, 0, 3840, 2160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkoqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehv2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15wb7")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrvft"]
+size = Vector2(1853, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkoqu"]
+atlas = ExtResource("3_15wb7")
+region = Rect2(0, 0, 4.054364, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7kpp"]
+texture = ExtResource("4_eoq84")
+texture_region_size = Vector2i(128, 128)
+3:1/0 = 0
+4:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_dkoqu"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/4 = SubResource("TileSetAtlasSource_j7kpp")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8edd"]
+load_path = "res://.godot/imported/backgroumd.png-7e9c88008f7d148336432a7fa603a5f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hph3"]
+atlas = SubResource("CompressedTexture2D_k8edd")
+region = Rect2(3838.479, 5.375, 3840.498, 2159.2769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7kpp"]
+atlas = ExtResource("7_s77qv")
+region = Rect2(11519.502, 0, 3840.498, 2159.2769)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pr5en"]
+load_path = "res://.godot/imported/backgroumd.png-7e9c88008f7d148336432a7fa603a5f2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjebc"]
+atlas = SubResource("CompressedTexture2D_pr5en")
+region = Rect2(7681.6377, -9.278564, 3840.498, 2159.2769)
+
+[node name="level2" type="Node2D" unique_id=1837050722]
+script = ExtResource("1_ehv2h")
+
+[node name="door" parent="." unique_id=884916747 instance=ExtResource("1_7dov7")]
+position = Vector2(201, 2064)
+
+[node name="Label" type="Label" parent="." unique_id=708605328]
+offset_left = 232.0
+offset_top = 401.0
+offset_right = 454.0
+offset_bottom = 572.0
+theme_override_constants/outline_size = 26
+theme_override_font_sizes/font_size = 40
+text = "KILL SLIME
+
+FIND DOOR"
+
+[node name="world" type="StaticBody2D" parent="." unique_id=435130670]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world" unique_id=334455391]
+rotation = -3.1415927
+shape = SubResource("WorldBoundaryShape2D_dkoqu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world" unique_id=778466251]
+rotation = -4.712389
+shape = SubResource("WorldBoundaryShape2D_5hph3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="world" unique_id=1661747722]
+position = Vector2(3835, 2472)
+rotation = -6.2831855
+shape = SubResource("WorldBoundaryShape2D_dkoqu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="world" unique_id=943926554]
+position = Vector2(3835, 2472)
+rotation = -7.853982
+shape = SubResource("WorldBoundaryShape2D_5hph3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="world" unique_id=18122634]
+position = Vector2(1923, 1399)
+sprite_frames = SubResource("SpriteFrames_dkoqu")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.76710206
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world" unique_id=486659268]
+position = Vector2(2, 716)
+polygon = PackedVector2Array(-1, -2, 82, -24, 304, -29, 450, 3, 538, 29, 530, 54, 435, 86, -5, 97)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="world" unique_id=257459712]
+position = Vector2(1306, 836)
+polygon = PackedVector2Array(32, -31, 146, -40, 266, -44, 413, -68, 533, -57, 568, 1, 530, 28, 43, 54)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="world" unique_id=2044517444]
+position = Vector2(175, 1692)
+polygon = PackedVector2Array(48, 14, 52, -24, 111, -36, 344, -36, 351, -23, 338, 34, 334, 54, 49, 58)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="world" unique_id=1835142132]
+position = Vector2(1014, 1492)
+polygon = PackedVector2Array(48, 14, 52, -24, 111, -36, 305, -34, 365, -21, 357, 37, 350, 61, 49, 58)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="world" unique_id=1366574110]
+position = Vector2(1014, 1492)
+polygon = PackedVector2Array(1421, -801, 1428, -842, 1558, -814, 1723, -820, 1849, -837, 1885, -819, 1827, -742, 1447, -725)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="world" unique_id=23696048]
+position = Vector2(1014, 1492)
+polygon = PackedVector2Array(2199, -672, 2269, -689, 2478, -692, 2643, -699, 2833, -694, 2827, -591, 2278, -634, 2211, -652)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="world" unique_id=1030480356]
+position = Vector2(1849, 2017)
+polygon = PackedVector2Array(-1163, 211, -1156, 192, -941, 166, -776, 164, -686, 183, -599, 190, -596, 218, -646, 255, -1119, 251)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="world" unique_id=2049444518]
+position = Vector2(898, 2208)
+polygon = PackedVector2Array(-891, 74, -796, 68, -619, 59, -466, 68, -390, 79, -385, 101, -455, 168, -803, 159, -893, 115)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="world" unique_id=578757700]
+position = Vector2(1849, 2017)
+polygon = PackedVector2Array(-315, 337, -216, 365, 51, 392, 594, 386, 723, 380, 1019, 388, 1251, 382, 1549, 396, 1565, 418, 1479, 461, -220, 463, -330, 343)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="world" unique_id=628591789]
+position = Vector2(1534, 1826)
+polygon = PackedVector2Array(71, 17, 73, -48, 206, -42, 322, -50, 478, -45, 472, -14, 423, 52, 73, 64)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="world" unique_id=765278452]
+position = Vector2(360, 1707)
+polygon = PackedVector2Array(1609, -145, 1512, -242, 2012, -299, 2206, -322, 2500, -285, 2599, -305, 3073, -296, 3481, -308, 3481, -145)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=751169082 groups=["lava"]]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1218930612]
+position = Vector2(891, 2438)
+shape = SubResource("RectangleShape2D_hrvft")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D" unique_id=1075751242]
+position = Vector2(1674, 2449)
+amount = 16
+texture = SubResource("AtlasTexture_dkoqu")
+emission_shape = 3
+emission_rect_extents = Vector2(-700, 1)
+direction = Vector2(1, 1.18)
+gravity = Vector2(0, -300)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=472738035 groups=["lava"]]
+position = Vector2(2272, 25)
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=1895083751]
+position = Vector2(891, 2438)
+shape = SubResource("RectangleShape2D_hrvft")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D2" unique_id=1432114387]
+position = Vector2(1674, 2449)
+amount = 16
+texture = SubResource("AtlasTexture_dkoqu")
+emission_shape = 3
+emission_rect_extents = Vector2(-700, 1)
+direction = Vector2(1, 1.18)
+gravity = Vector2(0, -300)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=786467840]
+tile_map_data = PackedByteArray("AAAEAAQABAAHAAUAAAD//wQABAAHAAUAAAAIAAMABAAHAAUAAAAIAAQABAAHAAUAAAAJAAMABAAHAAUAAAAJAAQABAAHAAUAAAAEAAMABAAHAAUAAAAFAAMABAAHAAUAAAAFAAQABAAHAAUAAAAKAAQABAAHAAUAAAAOAAQABAAHAAUAAAAGAAkABAAHAAUAAAABAAkABAAHAAUAAAAKAAoABAAHAAUAAAAKAAsABAAHAAUAAAAPAAoABAAHAAUAAAAPAAsABAAHAAUAAAAKAA0ABAAHAAUAAAAKAA4ABAAHAAUAAAD//w0ABAAHAAUAAAD//w4ABAAHAAUAAAAGABAABAAHAAUAAAALABAABAAHAAUAAAAGABIABAAHAAUAAAAMAA4ABAAHAAUAAAAMAA8ABAAHAAUAAAAeAA4ABAAHAAUAAAAeAA8ABAAHAAUAAAAeAAYABAAHAAUAAAAeAAcABAAHAAUAAAAPAAYABAAHAAUAAAAPAAcABAAHAAUAAAAOAAMABAAHAAUAAAAJABEABAAHAAUAAAAKABEABAAHAAUAAAAEABEABAAHAAUAAAAFABEABAAHAAUAAAD//xEABAAHAAUAAAAEAAwABAAHAAUAAAAEAA0ABAAHAAUAAAABAAwABAAHAAUAAAABAA0ABAAHAAUAAAAHAAsABAAHAAUAAAAHAAwABAAHAAUAAAAIAAsABAAHAAUAAAAIAAwABAAHAAUAAAAKAAwABAAHAAUAAAALAAsABAAHAAUAAAALAAwABAAHAAUAAAAMAA0ABAAHAAUAAAAPAA4ABAAHAAUAAAAQAA4ABAAHAAUAAAAOAAsABAAHAAUAAAAeAAoABAAHAAUAAAAeAAsABAAHAAUAAAAdAAYABAAHAAUAAAAYAAYABAAHAAUAAAAXAAUABAAHAAUAAAASAAQABAAHAAUAAAASAAUABAAHAAUAAAAOAAUABAAHAAUAAAAOAAYABAAHAAUAAAAJAAYABAAHAAUAAAAKAAYABAAHAAUAAAALABEABAAHAAUAAAALABIABAAHAAUAAAAaABIABAAHAAUAAAA=")
+tile_set = SubResource("TileSet_dkoqu")
+
+[node name="enemyslime" parent="TileMapLayer" unique_id=1457185494 instance=ExtResource("5_yl73a")]
+position = Vector2(1567, 725)
+
+[node name="enemyslime2" parent="TileMapLayer" unique_id=895810774 instance=ExtResource("5_yl73a")]
+position = Vector2(999, 2073)
+
+[node name="enemyslime5" parent="TileMapLayer" unique_id=1024556063 instance=ExtResource("5_yl73a")]
+position = Vector2(378, 1572)
+
+[node name="enemyslime6" parent="TileMapLayer" unique_id=1509809956 instance=ExtResource("5_yl73a")]
+position = Vector2(2443, 1292)
+
+[node name="enemyslime7" parent="TileMapLayer" unique_id=1117439125 instance=ExtResource("5_yl73a")]
+position = Vector2(2929.0002, 1284.9998)
+
+[node name="enemyslime3" parent="TileMapLayer" unique_id=170697857 instance=ExtResource("5_yl73a")]
+position = Vector2(3583, 710)
+
+[node name="enemyslime4" parent="TileMapLayer" unique_id=2080929798 instance=ExtResource("5_yl73a")]
+position = Vector2(2630, 605)
+
+[node name="enemyslime8" parent="TileMapLayer" unique_id=655961527 instance=ExtResource("5_yl73a")]
+position = Vector2(2080.0002, 2305.0002)
+
+[node name="enemyslime9" parent="TileMapLayer" unique_id=698109156 instance=ExtResource("5_yl73a")]
+position = Vector2(2630, 2281)
+
+[node name="player" parent="." unique_id=1540481534 instance=ExtResource("6_xbcdb")]
+position = Vector2(226, 569.00006)
+floor_snap_length = 32.0
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1648862380]
+position = Vector2(-1.3023472, -1.3786259)
+scale = Vector2(1.0674682, 1.1299157)
+zoom = Vector2(0.555, 0.555)
+limit_left = 0
+limit_top = 0
+limit_right = 3842
+limit_bottom = 2475
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="player/Camera2D" unique_id=1601219090]
+scale = Vector2(0.365, 0.365)
+transform = Transform2D(0.365, 0, 0, 0.365, 0, 0)
+
+[node name="Parallax2D3" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=2041371088]
+scale = Vector2(1.8619788, 1.9050654)
+scroll_scale = Vector2(1.1, 1.1)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D2" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D3" unique_id=1635081525]
+texture = SubResource("AtlasTexture_5hph3")
+
+[node name="Parallax2D" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=1994794901]
+scale = Vector2(1.8619788, 1.9050654)
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D4" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D" unique_id=1605505815]
+texture = SubResource("AtlasTexture_j7kpp")
+
+[node name="Parallax2D2" type="Parallax2D" parent="player/Camera2D/ParallaxBackground" unique_id=23615057]
+scale = Vector2(1.8619788, 1.9050654)
+scroll_scale = Vector2(1.3, 1.3)
+scroll_offset = Vector2(619.1781, 1558.9042)
+
+[node name="Sprite2D3" type="Sprite2D" parent="player/Camera2D/ParallaxBackground/Parallax2D2" unique_id=323817327]
+texture = SubResource("AtlasTexture_bjebc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D" unique_id=421816898]
+
+[node name="ui" parent="player/Camera2D/CanvasLayer" unique_id=1161217378 instance=ExtResource("8_5hnhx")]

@@ -33,6 +33,7 @@ script = ExtResource("1_5bb75")
 position = Vector2(280.1505, 0)
 scale = Vector2(0.38446847, 0.38446847)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
+autoplay = "default"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1421944331]
 target_position = Vector2(933.2165, 1.8553011)

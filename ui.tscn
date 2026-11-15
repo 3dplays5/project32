@@ -123,6 +123,15 @@ animations = [{
 [node name="ui" type="Node2D" unique_id=1161217378]
 script = ExtResource("1_m6e0p")
 
+[node name="Label" type="Label" parent="." unique_id=1793959172]
+offset_left = 28.0
+offset_top = 39.0
+offset_right = 322.0
+offset_bottom = 100.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 28
+text = "ENEMIES LEFT"
+
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1046464654]
 offset_top = 651.0
 offset_right = 189.0
@@ -132,7 +141,7 @@ offset_bottom = 721.0
 position = Vector2(144, 24.999985)
 scale = Vector2(0.30887496, 0.30887496)
 sprite_frames = SubResource("SpriteFrames_dkoqu")
-frame_progress = 0.82647365
+frame_progress = 0.7757968
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AspectRatioContainer" unique_id=1351816021]
 position = Vector2(978, 16)

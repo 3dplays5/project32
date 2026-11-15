@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var health = $AspectRatioContainer/AnimatedSprite2D
 @onready var bulletsui = $AspectRatioContainer/AnimatedSprite2D2
+@onready var enemyui = $Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,3 +27,5 @@ func _process(delta: float) -> void:
 		bulletsui.play("1")
 	elif Global.bullets == 0:
 		bulletsui.play("0")
+	
+	enemyui.text = "enemies left: " + str(Global.enemies)

@@ -12,3 +12,12 @@ res://ui.gd
 res://global.gd
 res://gameover.gd
 res://gameover.tscn
+res://enemydeath.tscn
+res://enemydeath.gd
+res://gunshoot.tscn
+res://level_1.tscn
+res://door.tscn
+res://door.gd
+res://level_2.tscn
+res://level_2.gd
+res://level_1.gd

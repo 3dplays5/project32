@@ -1,29 +1,25 @@
 [gd_scene format=3 uid="uid://qutwg5wjr4or"]
 
 [ext_resource type="Script" uid="uid://bon083p1hpftj" path="res://gameover.gd" id="1_4nh4k"]
+[ext_resource type="Texture2D" uid="uid://c555d871ihvtr" path="res://level1(1).png" id="2_tpdqf"]
 
 [node name="gameover" type="Node2D" unique_id=73598321]
 script = ExtResource("1_4nh4k")
 
-[node name="Label" type="Label" parent="." unique_id=1629480057]
-offset_left = 374.0
-offset_top = 287.0
-offset_right = 690.0
-offset_bottom = 363.0
-size_flags_horizontal = 4
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 55
-text = "GAME OVER"
+[node name="Level1(1)" type="Sprite2D" parent="." unique_id=2100040284]
+position = Vector2(547.00006, 359.00003)
+scale = Vector2(0.33390534, 0.33390534)
+texture = ExtResource("2_tpdqf")
 
 [node name="Button" type="Button" parent="." unique_id=617196044]
-offset_left = 465.0
-offset_top = 379.0
-offset_right = 607.0
-offset_bottom = 432.0
+offset_left = 796.0
+offset_top = 602.0
+offset_right = 1030.0
+offset_bottom = 684.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/outline_size = 11
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 54
 text = "RESTART"
 expand_icon = true
 

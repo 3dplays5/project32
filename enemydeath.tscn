@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dxxtvur41ht3g"]
+
+[ext_resource type="Script" uid="uid://4hiku0smu7gq" path="res://enemydeath.gd" id="1_ic06v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ic06v"]
+load_path = "res://.godot/imported/particles.png-7d1ac1cc48cc11700e9f46ab49fdffdd.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic06v"]
+atlas = SubResource("CompressedTexture2D_ic06v")
+region = Rect2(-0.0038403273, 0, 4.0043187, 4)
+
+[node name="enemydeath" type="CPUParticles2D" unique_id=918641923]
+position = Vector2(2, 0)
+emitting = false
+amount = 32
+texture = SubResource("AtlasTexture_ic06v")
+one_shot = true
+speed_scale = 2.29
+explosiveness = 0.82
+fixed_fps = 60
+draw_order = 1
+spread = 180.0
+gravity = Vector2(0, 74.72)
+initial_velocity_min = 124.61
+initial_velocity_max = 124.61
+angle_min = -7516.5
+angle_max = 2709.5
+script = ExtResource("1_ic06v")

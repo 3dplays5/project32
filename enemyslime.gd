@@ -6,7 +6,10 @@ const JUMP_VELOCITY = -400.0
 var can_flip = true
 @onready var sprite = $AnimatedSprite2D
 @onready var aim = $Area2D
-@onready var player = $"../player"
+var particle = preload("res://enemydeath.tscn")
+
+func _ready() -> void:
+	Global.enemies += 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -14,8 +17,6 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	velocity.x = SPEED
-	
-	aim.look_at(player.position)
 	
 	if is_on_wall() && can_flip:
 		if can_flip:
@@ -33,4 +34,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullet"):
+		var spawn = particle.instantiate()
+		owner.add_child(spawn)
+		spawn.transform = self.transform
+		Global.enemies -= 1
 		queue_free()
