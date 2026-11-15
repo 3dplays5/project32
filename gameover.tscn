@@ -6,20 +6,20 @@
 script = ExtResource("1_4nh4k")
 
 [node name="Label" type="Label" parent="." unique_id=1629480057]
-offset_left = 402.0
-offset_top = 291.0
-offset_right = 718.0
-offset_bottom = 367.0
+offset_left = 374.0
+offset_top = 287.0
+offset_right = 690.0
+offset_bottom = 363.0
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 55
 text = "GAME OVER"
 
 [node name="Button" type="Button" parent="." unique_id=617196044]
-offset_left = 499.0
-offset_top = 416.0
-offset_right = 641.0
-offset_bottom = 469.0
+offset_left = 465.0
+offset_top = 379.0
+offset_right = 607.0
+offset_bottom = 432.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/outline_size = 11

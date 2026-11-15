@@ -10,6 +10,9 @@ var gravity = 50
 var directionback = Vector2.ZERO
 var can_dmg = true
 
+func _ready() -> void:
+	Global.player_health = 4
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -74,8 +77,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	await get_tree().create_timer(0.1).timeout
-	can_dmg = true
-	if Global.player_health <= 0:
-		get_tree().change_scene_to_file("res://gameover.tscn")
+	if body.is_in_group("enemy"):
+		await get_tree().create_timer(0.1).timeout
+		can_dmg = true
+		if Global.player_health <= 0:
+			get_tree().change_scene_to_file("res://gameover.tscn")
 		
